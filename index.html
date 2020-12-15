@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="fonts\fons_seven_segment_classic.css" />
+    <link rel="stylesheet" href="fonts\fonts_seven_segment_modern.css" />
+    <link rel="stylesheet" href="fonts\fonts_fourteen_segment_modern.css" /> -->
+    <link rel="stylesheet" href="fonts\fonts.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="clock" class="clock">
+      <div class="time">
+        <div id="hour">00</div>
+        <div class="time-separator">:</div>
+        <div id="minutes">00</div>
+        <div class="time-separator">:</div>
+        <div id="seconds">00</div>
+      </div>
+
+      <div class="time shadow">
+        <div>88</div>
+        <div>:</div>
+        <div>88</div>
+        <div>:</div>
+        <div>88</div>
+      </div>
+    </div>
+
+    <div id="date-container" class="date-container">
+      <div class="date" id="date"></div>
+      <div class="date shadow">888-88-88-8888</div>
+    </div>
+
+    <!-- Settings -->
+    <button id="set-btn" class="set-btn"><i class="fas fa-cogs"></i></button>
+
+    <div id="modal" class="modal">
+      <div id="ui-setter" class="ui-setter">
+        <button id="setter-close"><i class="fas fa-times"></i></button>
+        <div class="clearfix"></div>
+        <!--Display Style -->
+        <div class="setting">
+          <h3>style</h3>
+          <button id="seven-seg-btn">8</button
+          ><button id="fourteen-seg-btn">~</button>
+        </div>
+        <!-- Color -->
+        <div class="setting">
+          <h3>color</h3>
+          <div class="color-set-container">
+            <div id="red" class="color-set"></div>
+            <div id="orange" class="color-set"></div>
+            <div id="yellow" class="color-set"></div>
+            <div id="white" class="color-set"></div>
+            <div id="green" class="color-set"></div>
+            <div id="blue" class="color-set"></div>
+            <div id="purple" class="color-set"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <button id="toggle-btn">Toggle</button>
+
+    <input id="color-picker" type="color" /> -->
+
+    <script src="script.js"></script>
+    <script src="UI.js"></script>
+  </body>
+</html>

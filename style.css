@@ -1,0 +1,265 @@
+:root {
+  font-size: 16px;
+  --color: #d9d9d9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.clearfix {
+  clear: both;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #000;
+  color: var(--color);
+  font-family: "seven_segment_modern";
+}
+
+.fourteen-seg {
+  font-family: "fourteen_segment_modern";
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 9rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shadow {
+  opacity: 0.15;
+  position: absolute;
+  z-index: 1;
+}
+
+.time-separator {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    color: var(--color);
+  }
+  25% {
+    color: black;
+  }
+  75% {
+    color: var(--color);
+  }
+}
+
+.date-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.date {
+  font-size: 2rem;
+  word-spacing: 1rem;
+}
+
+.set-btn {
+  font-size: 2.5rem;
+  color: var(--color);
+  background-color: #000;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 150px;
+  height: 150px;
+}
+
+.set-btn:hover {
+  /* border: 6px solid var(--color); */
+  background-image: radial-gradient(circle, var(--color), #000, #000);
+  color: #000;
+}
+
+.set-btn:active {
+  transform: scale(0.8);
+}
+
+button:active,
+button:focus {
+  outline: none;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  display: none;
+  left: 0;
+  top: 0;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.ui-setter {
+  background-color: rgba(25, 25, 25, 0.9);
+  color: var(--color);
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  padding: 10px;
+  height: 50vh;
+  width: 50vw;
+  /* display: none; */
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 25%;
+  transform: translateX(-50%);
+}
+
+#setter-close {
+  float: right;
+  color: var(--color);
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#setter-close:active {
+  transform: scale(0.9);
+}
+
+.setting {
+  padding: 20px;
+}
+
+.setting h3 {
+  border-bottom: 1px solid var(--color);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.setting button {
+  color: var(--color);
+  font-size: 3rem;
+  margin: 0 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.setting button:active {
+  transform: scale(0.9);
+}
+
+#seven-seg-btn {
+  font-family: "seven_segment_modern";
+  transform: scale(1.2);
+  cursor: default;
+}
+
+#fourteen-seg-btn {
+  font-family: "fourteen_segment_modern";
+}
+
+.color-set-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 60%;
+  margin: auto;
+}
+
+.color-set {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  margin: 10px 10px;
+}
+
+.color-set:active {
+  transform: scale(0.8);
+}
+
+#red {
+  background-color: #ff5050;
+}
+
+#orange {
+  background-color: #ff9900;
+}
+
+#yellow {
+  background-color: #ffff00;
+}
+
+#white {
+  background-color: #d9d9d9;
+}
+
+#green {
+  background-color: #00ff00;
+}
+
+#blue {
+  background-color: #0099ff;
+}
+
+#purple {
+  background-color: #cc33ff;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 500px) {
+  :root {
+    font-size: 6px;
+  }
+}
+
+@media (max-width: 750px) {
+  :root {
+    font-size: 8px;
+  }
+
+  .ui-setter {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    transform: translateX(0);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    padding-bottom: 100px;
+  }
+
+  .setting {
+    width: 100%;
+  }
+
+  /* .set-btn {
+    display: block;
+  } */
+}
