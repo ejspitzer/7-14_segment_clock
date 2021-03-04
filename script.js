@@ -2,6 +2,7 @@ const hour = document.getElementById("hour");
 const minutes = document.getElementById("minutes");
 const seconds = document.getElementById("seconds");
 const todayDate = document.getElementById("date"); 
+const pageTitle = document.querySelector("title");
 let currentDay;
 
 setInterval(clock, 1000)
@@ -9,13 +10,19 @@ setInterval(checkDay, 1000)
 
 function clock() {
     const date = new Date();
-    const h = date.getHours();
-    const m = date.getMinutes();
-    const s = date.getSeconds();
+    let h = date.getHours();
+    let m = date.getMinutes();
+    let s = date.getSeconds();
 
-    hour.innerText = h < 10 ? "0" + h : h;
-    minutes.innerText = m < 10 ? "0" + m : m;
-    seconds.innerText = s < 10 ? "0" + s : s;
+    h = h < 10 ? "0" + h : h;
+    m = m < 10 ? "0" + m : m;
+    s = s < 10 ? "0" + s : s;
+
+    hour.innerText = h;
+    minutes.innerText = m;
+    seconds.innerText = s;
+
+    pageTitle.innerText = `${h}:${m}:${s}`
 
 }
 
@@ -27,7 +34,6 @@ function checkDay() {
     } else {
         fullDate();
         currentDay = day;
-        console.log(currentDay);
     }
 
 }
